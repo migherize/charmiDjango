@@ -25,10 +25,6 @@ class Profile(models.Model):
 	Photo =models.OneToOneField(Photo, null=True, blank=True, on_delete=models.CASCADE)
 	Jugadores = models.ForeignKey("Game", null=True, blank=True, on_delete=models.CASCADE)
 
-	def __str__(self):
-		return self.IdUser
-
-
 class Address(models.Model):
 	Street = models.CharField(max_length=30)
 	Avenue = models.CharField(max_length=30)

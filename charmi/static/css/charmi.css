@@ -1,0 +1,247 @@
+body {
+	background: #222221;
+	font-family: Verdana;
+	color: white;
+}
+
+/* menu adaptable */
+
+header{
+	background: #2E2E2D;
+}
+
+.ajustable {
+	
+	position: fixed;
+	margin:0;
+	padding: 0;
+	width: 100%;
+	height: 40px;
+	z-index: 1000;
+}
+
+.ajustable nav {
+	width: 100%;
+	max-width: 2000px;
+	margin-top:0px;
+	margin-right: 0px; 
+	z-index: 1000;
+}
+.menu_bar{
+	display: none;
+}
+
+.ajustable nav ul {
+	overflow: hidden;
+	list-style: none;
+	padding-left: 0px;
+}
+
+.ajustable nav ul li {
+	float:left;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.ajustable nav ul li a {
+	color: #fff;
+	padding: 20px;
+	padding-top: 10px;
+	padding-left: 0px;
+	width: 50px;
+	display:block;
+	text-decoration: none;
+}
+.ajustable nav ul li span {
+	height: 30px;
+	width: 100px;
+	font-size: 20px;
+}
+
+/* Inicio IncioSesion */
+
+.Inicio {
+	min-height: 100vh;
+	background-image: url(../img/fondo.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	background-attachment: fixed; 
+}
+
+
+.Login {
+	background-color: #222221;
+
+}
+
+.Login h1{
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 30px;
+
+}
+
+.Login form input{
+	width: 100%;
+	margin-bottom: 20px;
+	
+}
+.Login form label{
+	width: 100%;
+
+}
+
+.Login input[type="text"], 
+.Login input[type="contraseña"],
+.Login input[type="correo"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: white;
+	font-size: 16px;
+}
+.Login input[type="submit"] {
+	border: none;
+	border-radius:20px;
+	outline: none;
+	height: 40px;
+	font-size: 26px;
+}
+
+.Login form a {
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 30px;
+	color: white;
+}
+
+
+/* Fin IncioSesion */
+
+/* Inicio main */
+
+.Game {
+	height: 200px;
+	width: 200px;
+	border-right:1px solid #fff; 
+	border-left:1px solid #fff;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fff;
+	margin-right:20px;
+
+}
+
+.Game img{
+	width: 100%;
+	height: 100%;
+}
+
+.Game div {
+	border-right:1px solid #fff; 
+	border-left:1px solid #fff;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fff;
+}
+
+h3 {
+	text-decoration: none;
+	color: #fff;
+}
+
+.titulo {
+	border-right:1px solid #fff; 
+	border-left:1px solid #fff;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fff;
+}
+
+.foto {
+	border-right:1px solid #fff; 
+	border-left:1px solid #fff;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fff;
+	height: 625px;
+	width: 100%;
+}
+
+.foto2 {
+	border-right:1px solid #fff; 
+	border-left:1px solid #fff;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fff;
+	height: 200px;
+	width: 100%;
+	margin-bottom:10px;
+}
+
+
+.randow .col {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+.list_game h3 {
+	text-align: center;
+	background: #2E2E2D;
+}
+
+.primero .col-lg-3{
+	height: 250px;
+
+}
+
+
+.title h3{
+	text-align: center;
+	width: 100%;
+}
+
+.menu_der li {
+	overflow: hidden;
+}
+
+
+.menu_der ul li a {
+	color: #fff;
+	padding: 20px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 10px;
+	width: 100%;
+	display:block;
+	text-decoration: none;
+}
+
+.Rankings {
+	padding-right: 100px;
+
+}
+
+
+
+/* Fin main */
+
+
+/* Inicio Body de ajedrez */
+
+.muerto {
+	width: 100%;
+	height: 40px;
+}
+
+.randow div {
+	background: #2E2E2D;
+	width: 100%;
+}
+
+.randow {
+	margin-top: 50px;
+}
+
+/* Fin Body de ajedrez */
