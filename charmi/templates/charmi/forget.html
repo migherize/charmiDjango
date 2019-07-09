@@ -1,0 +1,14 @@
+{% extends 'charmi/base.html' %}
+
+{% block title %} Forget {% endblock %}
+
+{% block Forget %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Registrarse">
+
+</form>
+
+{% endblock %}

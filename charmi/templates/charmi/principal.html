@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> {% block title%} Charmi {% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/charmi.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+</head>
+<body>
+	<header class="ajustable">
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="fas fa bars"></span>Menu</a>
+
+		</div>
+
+		<nav>
+			<ul>
+				<li><h2>Charmi.org</h2></li>
+				<li><a href=""><span class="fa fa-facebook" style="width: 100px;"> Jugar </span></a></li>
+				<li><a style="width: 120px" href=""><span class="fa fa-facebook"> Aprender </span></a></li>
+				<li><a style="width: 120px" href=""><span class="fa fa-facebook"> Observar </span></a></li>
+				<li style="margin-right: 50px;"><a style="width: 100px" href=""><span class="fa fa-facebook" style="width: 150px;"> Comunidad </span></a></li>
+				<li style="margin-right: 150px;margin-left: 0px; width: 80px;"><a href=""><span class="fa fa-home">Contactanos</span></a></li>
+				<li style="margin-left: 2px; margin-right: 2px;"><a style="width: 30px" href=""><span class="fa fa-search" style="width: 30px" > </span></a></li>
+
+				<li><a style="width: 80px" href="{% url 'login' %}"><span class="fa fa-facebook" style="width: 80px" > Login </span></a></li>
+
+			</ul>
+		</nav>
+
+	</header>
+	<!--Container general 1-->
+	<<div class="main col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+		<div class="row muerto">
+			
+		</div>
+		<!-- fila 1 -->
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+				<div class="foto">
+
+					<div class="foto2"> 
+						<div class="titulo">
+							<h6> {% block usuario %} {% endblock %} </h6>
+							
+						</div>
+
+						<div>
+							
+						</div>
+
+					</div>
+
+					<div class="foto2"> 
+						<div class="titulo">
+							<h6>Amigos</h6>
+							
+						</div>
+						<div>
+							
+						</div>
+
+
+					</div>
+
+					<div class="foto2"> 
+						<div class="titulo">
+							<h6>Top de Rankings </h6>
+							
+						</div>
+					<div>
+						<table >
+							<tbody>
+								<tr>
+									<td class="Rankings">Ajedrez</td>
+									<td>clasico</td>
+								</tr>
+								<tr>
+									<td class="Rankings">Poker</td>
+									<td>Celda 2</td>
+								</tr>
+								<tr>
+									<td class="Rankings">Domino</td>
+									<td>Celda 2</td>
+								</tr>
+								<tr>
+									<td class="Rankings">Ludo</td>
+									<td>Celda 2</td>
+								</tr>
+								<tr>
+									<td class="Rankings">Gomoku</td>
+									<td>Celda 2</td>
+								</tr>
+								<tr>
+									<td class="Rankings">Damas</td>
+									<td>Celda 2</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+
+					</div>
+
+
+				</div>
+
+
+				
+			</div>
+			<div class="list_game col-xs-7 col-sm-7 col-md-7 col-lg-7">
+
+				<section class="randow">
+					<div class="row title">
+
+							<h3>Multijugador</h3>
+
+					</div>
+					 </a>
+					<div class="row primero">
+						 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						 	<a href="#">
+							<div class="Game" id="Ajedrez" ></div>
+							
+							<h3>Ajedrez</h3>
+							</a>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<a href="#">
+							<div class="Game" id="Poker">
+								
+							</div>
+							<h3>Poker</h3>
+							</a>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<a href="">
+							<div class="Game" id="Domino">
+
+							</div>
+							<h3>Domino</h3>
+							</a>
+						</div>
+					</div>
+					<div class="row">
+						<a href="">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<div class="Game" id="Ludo">
+
+							</div>
+							<h3>Ludo</h3>
+						</a>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<a href="">
+							<div class="Game" id="Gomoku">
+								
+							</div>
+							<h3>Gomoku</h3>
+							</a>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<a href="">
+							<div class="Game" id="Damas">
+								
+							</div>
+							<h3>Damas</h3>
+							</a>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="menu_der" style="margin-top: 200px;">
+				<ul>
+					<li><a href="">Mi perfil</a></li>
+					<li><a href="">Mis mensajes</a></li>
+					<li><a href="">Mis amigos</a></li>
+					<li><a href="">Mis Rankings</a></li>
+					<li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+	</div>
+
+
+	<footer>
+		
+
+
+	</footer>
+
+
+	<!-- Necesario para BootStrap JQUERY -->
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

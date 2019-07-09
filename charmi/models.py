@@ -21,7 +21,7 @@ class Profile(models.Model):
 	Date_joined = models.DateField()
 	Last_join = models.DateField()
 
-	User = models.OneToOneField(User, on_delete=models.CASCADE)
+	User = models.OneToOneField('auth.User', on_delete=models.CASCADE)
 	Photo =models.OneToOneField(Photo, null=True, blank=True, on_delete=models.CASCADE)
 	Jugadores = models.ForeignKey("Game", null=True, blank=True, on_delete=models.CASCADE)
 

@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +19,13 @@
 			<ul>
 				<li><h2>Charmi.org</h2></li>
 				<li><a href=""><span class="fa fa-facebook" style="width: 100px;"> Jugar </span></a></li>
-				<li><a style="width: 100px" href=""><span class="fa fa-facebook"> Aprender </span></a></li>
-				<li><a style="width: 100px" href=""><span class="fa fa-facebook"> Observar </span></a></li>
+				<li><a style="width: 120px" href=""><span class="fa fa-facebook"> Aprender </span></a></li>
+				<li><a style="width: 120px" href=""><span class="fa fa-facebook"> Observar </span></a></li>
 				<li style="margin-right: 50px;"><a style="width: 100px" href=""><span class="fa fa-facebook" style="width: 150px;"> Comunidad </span></a></li>
-				<li style="margin-right: 250px;margin-left: 0px; width: 80px;"><a href=""><span class="fa fa-home">Contactanos</span></a></li>
+				<li style="margin-right: 150px;margin-left: 0px; width: 80px;"><a href=""><span class="fa fa-home">Contactanos</span></a></li>
 				<li style="margin-left: 2px; margin-right: 2px;"><a style="width: 30px" href=""><span class="fa fa-search" style="width: 30px" > </span></a></li>
-				<li style="margin-left: 2px; margin-right: 2px;"><a style="width: 30px" href=""><span class="far fa-bell" style="width: 30px" > </span></a></li>
-				<li style="margin-left: 2px; margin-right: 2px;"><a style="width: 30px" href=""><span class="fa fa-playstation" style="width: 30px" > </span></a></li>
-				<li><a style="width: 80px" href="user_form.html"><span class="fa fa-facebook" style="width: 80px" > Login </span></a></li>
+
+				<li><a style="width: 80px" href="{% url 'login' %}"><span class="fa fa-facebook" style="width: 80px" > Login </span></a></li>
 
 			</ul>
 		</nav>
@@ -42,13 +41,31 @@
 		<div class="row" style="margin-top: 50px;">
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			</div>
-			{% block content %}
 
-			{% endblock %}
+			<div style="border-radius: 20px;" class="Login col-xs-4 col-sm-4 col-md-4 col-lg-4" >
 
-			{% block profile %}
+				{% block login %}
 
-			{% endblock %}
+				{% endblock %}
+
+				{% block Registrar %}
+
+				{% endblock %}
+
+				{% block Forget %}
+
+				{% endblock %}
+
+			
+				{% block content %}
+
+				{% endblock %}
+
+				{% block profile %}
+
+				{% endblock %}
+
+			</div>
 
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 				

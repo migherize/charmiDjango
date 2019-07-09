@@ -1,0 +1,21 @@
+
+{% block title %}	Login	{% endblock %}
+
+{% block content %}
+<div style="border-radius: 20px;" class="Login col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				
+	<h1>Registrarse</h1>
+
+	<form action="/" method="POST" class="post-form">
+		{% csrf_token %}
+		{{ form.as_p }}
+
+		<input type="submit" value="Submit">
+		<a style="margin-right: 100px" href="Registrarse.html">Registrarse</a>
+		<a style="text-align: right;" href="Recuperar.html">Recuperar Contraseña</a>
+
+	</form>
+
+</div>
+
+{% endblock %}

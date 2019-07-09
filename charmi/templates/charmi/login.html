@@ -1,0 +1,16 @@
+{% extends 'charmi/base.html' %}
+
+{% block title %}	Login	{% endblock %}
+
+{% block login %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+
+    <a style="margin-right: 100px" href="{% url 'register' %}">Registrarse</a>
+	<a style="text-align: right;" href="{% url 'forget' %}">Olvide mi Contraseña</a>
+</form>
+
+{% endblock %}

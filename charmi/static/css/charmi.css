@@ -54,7 +54,7 @@ header{
 }
 .ajustable nav ul li span {
 	height: 30px;
-	width: 100px;
+	width: 120px;
 	font-size: 20px;
 }
 
@@ -69,6 +69,30 @@ header{
 	background-attachment: fixed; 
 }
 
+#Ajedrez {
+	background-image: url(../img/ajedrez.jpg);
+	width: 100%;
+}
+#Poker {
+	background-image: url(../img/poquer.jpg);
+	width: 100%;
+}
+#Domino {
+	background-image: url(../img/domino.jpg);
+	width: 100%;
+}
+#Ludo {
+	background-image: url(../img/ludo.jpg);
+	width: 100%;
+}
+#Gomoku {
+	background-image: url(../img/gomoku.png);
+	width: 100%;
+}
+#Damas {
+	background-image: url(../img/damas.jpg);
+	width: 100%;
+}
 
 .Login {
 	background-color: #222221;
