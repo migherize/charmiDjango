@@ -15,15 +15,11 @@ class Profile(models.Model):
 		('M','Masculo'),
 	)
 
-	First_name = models.CharField(max_length=30)
-	Last_name = models.CharField(max_length=30) 
-	Date_Born = models.DateField()
-	Date_joined = models.DateField()
-	Last_join = models.DateField()
+	Sexo = models.CharField(max_length=1, choices = Gender)
 
 	User = models.OneToOneField('auth.User', on_delete=models.CASCADE)
 	Photo =models.OneToOneField(Photo, null=True, blank=True, on_delete=models.CASCADE)
-	Jugadores = models.ForeignKey("Game", null=True, blank=True, on_delete=models.CASCADE)
+	Partidas = models.ForeignKey("Game", null=True, blank=True, on_delete=models.CASCADE)
 
 class Address(models.Model):
 	Street = models.CharField(max_length=30)
@@ -34,13 +30,14 @@ class Address(models.Model):
 	Profile = models.ForeignKey(Profile,related_name="Address", null=True, blank=True, on_delete=models.CASCADE)
 
 class Ranking(models.Model):
-	IdRanking = models.CharField(max_length=30, primary_key=True)
+	IdRanking = models.AutoField(max_length=30, primary_key=True)
 	Type = models.CharField(max_length=30)
+	Cantidad = models.CharField(max_length=30)
 	Num_win = models.CharField(max_length=30)
 	Num_lose = models.CharField(max_length=30)
 	Num_draw = models.CharField(max_length=30)
 
-	IdGame = models.OneToOneField("Game_list", null=True, blank=True, on_delete=models.CASCADE)
+	Game = models.OneToOneField("Game_list", null=True, blank=True, on_delete=models.CASCADE)
 	Profile = models.ForeignKey(Profile, related_name="Rankings", null=True, blank=True, on_delete=models.CASCADE)
 
 class Followers(models.Model):
@@ -57,17 +54,11 @@ class Game_list(models.Model):
 	IdGame = models.CharField(max_length=30, primary_key=True)
 	NameGame = models.CharField(max_length=30)
 
-class Opponents(models.Model):
-	IdOpponents = models.CharField(max_length=30, primary_key=True)
-	Opponents = models.CharField(max_length=30)
-
-	Contrincante = models.ForeignKey("Game", null=True, blank=True, on_delete=models.CASCADE)
-
 class Game(models.Model):
 	IdPlayGame = models.CharField(max_length=30, primary_key=True)
 	Fecha_Hora =  models.DateTimeField()
 	Result = models.CharField(max_length=30)
 
-	IdGame = models.OneToOneField(Game_list, null=True, blank=True, on_delete=models.CASCADE)
+	IdGame = models.ForeignKey(Game_list, related_name="Id_Game",null=True, blank=True, on_delete=models.CASCADE)
 
 

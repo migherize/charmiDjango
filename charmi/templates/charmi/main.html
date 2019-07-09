@@ -15,3 +15,21 @@
 	{{ user.last_name }}
 
 {% endblock %}
+
+{% block sexo %} 
+	
+	{{ user.profile.Sexo }}
+
+{% endblock %}
+
+{% block r1 %} 
+
+	{% for o in rankins %}
+	<tr>
+		<td class="Rankings"> {{ o.Game.NameGame }} </td>
+		<td> {{ o.Cantidad }} </td> 
+	</tr>
+
+	{% endfor  %}
+
+{% endblock %}

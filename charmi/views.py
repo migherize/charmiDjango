@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import Profile
+from .models import *
 from .forms import *
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
@@ -11,11 +11,7 @@ from django.views.generic import CreateView
 # Create your views here.
 
 def post_list(request):
-	return render(request, 'charmi/post_list.html', {})
-
-def profile_new(request):
-	form = ProfileForm()
-	return render(request, 'charmi/profile_edit.html', {'form': form})
+	return render(request, 'charmi/inicio.html', {})
 
 def register(request):
     if request.method == 'POST':
@@ -31,7 +27,10 @@ def register(request):
             }
 
             user = User.objects.create_user(username, email, password,**extras)
-            print(user)
+            profile = Profile.objects.create(Sexo='M',User = user)
+            for g in Game_list.objects.iterator():
+                Ranking.objects.create(Type='0',Cantidad='1000',Num_win='0',Num_lose='0',Num_draw='0',Game=g,Profile=profile) 
+
             return HttpResponseRedirect('/login/')
 
     else:
@@ -50,7 +49,8 @@ def signUp(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect('/main/')
+                rankins = user.profile.Rankings.all()
+                return render(request, 'charmi/main.html', {'rankins': rankins})
             else:
                 return HttpResponseRedirect('/login/')
     else:
