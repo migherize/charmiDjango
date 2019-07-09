@@ -1,8 +1,17 @@
 {% extends 'charmi/principal.html' %}
 {% block usuario %}
-<section>
-	<h1>Bienvenido</h1>
 	{{ user.username }}
-</section>
+
+{% endblock %}
+
+{% block nombre %}
+
+	{{ user.first_name }}
+
+{% endblock %}
+
+{% block apellido %}
+
+	{{ user.last_name }}
 
 {% endblock %}
