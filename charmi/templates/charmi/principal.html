@@ -18,14 +18,19 @@
 		<nav>
 			<ul>
 				<li><h2>Charmi.org</h2></li>
-				<li><a href=""><span class="fa fa-facebook" style="width: 100px;"> Jugar </span></a></li>
-				<li><a style="width: 120px" href=""><span class="fa fa-facebook"> Aprender </span></a></li>
-				<li><a style="width: 120px" href=""><span class="fa fa-facebook"> Observar </span></a></li>
-				<li style="margin-right: 50px;"><a style="width: 100px" href=""><span class="fa fa-facebook" style="width: 150px;"> Comunidad </span></a></li>
-				<li style="margin-right: 150px;margin-left: 0px; width: 80px;"><a href=""><span class="fa fa-home">Contactanos</span></a></li>
-				<li style="margin-left: 2px; margin-right: 2px;"><a style="width: 30px" href=""><span class="fa fa-search" style="width: 30px" > </span></a></li>
+				<li><a href=""><span style="width: 100px;"> Jugar </span></a></li>
+				<li><a style="width: 80px" href=""><span> Aprender </span></a></li>
+				<li><a style="width: 80px" href=""><span> Observar </span></a></li>
+				<li><a style="width: 110px" href=""><span> Comunidad </span></a></li>
+				<li style="margin-right: 100px;"><a style="width: 120px" href=""><span>Contactanos</span></a></li>
+				<li style="width: 180px; margin-right: 0px;"> 
+					<div class="buscar"> 
+						<input class="input" style = "width: 80%;" type="search" placeholder="Search" name="Buscar">
+						<button class = "fa fa-search"></button>
+					</div>
+				</li>
 
-				<li><a style="width: 80px" href="{% url 'login' %}"><span class="fa fa-facebook" style="width: 80px" > Login </span></a></li>
+				<li><a style="width: 150px; padding-right: 0px;padding-top: 4px;" href="{% url 'logout' %}"><span class="font-size: 20px;"> Cerrar Sesión </span></a></li>
 
 			</ul>
 		</nav>
@@ -39,135 +44,20 @@
 		</div>
 		<!-- fila 1 -->
 		<div class="row">
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 
-				<div class="foto">
+		{% block inf %} 
 
-					<div class="foto2"> 
-						<div class="titulo">
-							<label> Usuario: {% block usuario %} {% endblock %} <br>
-							</label>
-						</div>
+		{% endblock %} 
 
-						<div class="inf">
-							<label> Nombre: {% block nombre %} {% endblock %}
-							</label>
-							<label> Apellido: {% block apellido %} {% endblock %}
-							</label>
-							<label> Sexo: {% block sexo %} {% endblock %}
-							</label>
+		{% block listas_juegos %} 
 
-						</div>
+		{% endblock %} 
 
-					</div>
+		{% block menu_izq %} 
 
-					<div class="foto2"> 
-						<div class="titulo">
-							<h6>Amigos (cantidad)</h6>
-							
-						</div>
-						<div>
-
-						</div>
+		{% endblock %} 
 
 
-					</div>
-
-					<div class="foto2"> 
-						<div class="titulo">
-							<h6>Top de Rankings </h6>
-							
-						</div>
-					<div>
-						<table >
-							<tbody>
-								{% block r1 %} {% endblock %}
-							</tbody>
-						</table>
-
-					</div>
-
-					</div>
-
-
-				</div>
-
-
-				
-			</div>
-			<div class="list_game col-xs-7 col-sm-7 col-md-7 col-lg-7">
-
-				<section class="randow">
-					<div class="row title">
-
-							<h3>Multijugador</h3>
-
-					</div>
-					 </a>
-					<div class="row primero">
-						 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-						 	<a href="#">
-							<div class="Game" id="Ajedrez" ></div>
-							
-							<h3>Ajedrez</h3>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="#">
-							<div class="Game" id="Poker">
-								
-							</div>
-							<h3>Poker</h3>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="">
-							<div class="Game" id="Domino">
-
-							</div>
-							<h3>Domino</h3>
-							</a>
-						</div>
-					</div>
-					<div class="row">
-						<a href="">
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<div class="Game" id="Ludo">
-
-							</div>
-							<h3>Ludo</h3>
-						</a>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="">
-							<div class="Game" id="Gomoku">
-								
-							</div>
-							<h3>Gomoku</h3>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<a href="">
-							<div class="Game" id="Damas">
-								
-							</div>
-							<h3>Damas</h3>
-							</a>
-						</div>
-					</div>
-				</section>
-			</div>
-
-			<div class="menu_der" style="margin-top: 200px;">
-				<ul>
-					<li><a href="">Mi perfil</a></li>
-					<li><a href="">Mis mensajes</a></li>
-					<li><a href="">Mis amigos</a></li>
-					<li><a href="">Mis Rankings</a></li>
-					<li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
-				</ul>
-			</div>
-			
 		</div>
 		
 	</div>

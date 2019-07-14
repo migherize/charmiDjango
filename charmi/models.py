@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Photo(models.Model):
 	ruta = models.ImageField(
-		upload_to ='imagenes/Profiles/', height_field=None,
+		upload_to ='../imagenes/Profiles/', height_field=None,
 		width_field=None, max_length=100)
 
 class Profile(models.Model):
@@ -22,22 +22,22 @@ class Profile(models.Model):
 	Partidas = models.ForeignKey("Game", null=True, blank=True, on_delete=models.CASCADE)
 
 class Address(models.Model):
-	Street = models.CharField(max_length=30)
-	Avenue = models.CharField(max_length=30)
-	City = models.CharField(max_length=30)
-	Country = models.CharField(max_length=30)
+	Street = models.CharField(max_length=30, null=True, blank=True, default=None)
+	Avenue = models.CharField(max_length=30, null=True, blank=True, default=None)
+	City = models.CharField(max_length=30, null=True, blank=True, default=None)
+	Country = models.CharField(max_length=30, null=True, blank=True, default=None)
 
-	Profile = models.ForeignKey(Profile,related_name="Address", null=True, blank=True, on_delete=models.CASCADE)
+	Profile = models.ForeignKey(Profile, related_name="Addresses", on_delete=models.CASCADE)
 
 class Ranking(models.Model):
 	IdRanking = models.AutoField(max_length=30, primary_key=True)
 	Type = models.CharField(max_length=30)
-	Cantidad = models.CharField(max_length=30)
-	Num_win = models.CharField(max_length=30)
-	Num_lose = models.CharField(max_length=30)
-	Num_draw = models.CharField(max_length=30)
+	Cantidad = models.IntegerField()
+	Num_win = models.IntegerField()
+	Num_lose = models.IntegerField()
+	Num_draw = models.IntegerField()
 
-	Game = models.OneToOneField("Game_list", null=True, blank=True, on_delete=models.CASCADE)
+	Game = models.ForeignKey("Game_list",related_name="elo", null=True, blank=True, on_delete=models.CASCADE)
 	Profile = models.ForeignKey(Profile, related_name="Rankings", null=True, blank=True, on_delete=models.CASCADE)
 
 class Followers(models.Model):
@@ -60,5 +60,3 @@ class Game(models.Model):
 	Result = models.CharField(max_length=30)
 
 	IdGame = models.ForeignKey(Game_list, related_name="Id_Game",null=True, blank=True, on_delete=models.CASCADE)
-
-

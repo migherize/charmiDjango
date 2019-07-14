@@ -1,5 +1,109 @@
-<form action="/your-name/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> {% block title%} Charmi {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/charmi.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+</head>
+<body>
+    <header class="ajustable">
+        <div class="menu_bar">
+            <a href="#" class="bt-menu"><span class="fas fa bars"></span>Menu</a>
+
+        </div>
+
+        <nav>
+            <ul>
+                <li><h2>Charmi.org</h2></li>
+                <li><a href=""><span style="width: 100px;"> Jugar </span></a></li>
+                <li><a style="width: 80px" href=""><span> Aprender </span></a></li>
+                <li><a style="width: 80px" href=""><span> Observar </span></a></li>
+                <li><a style="width: 110px" href=""><span> Comunidad </span></a></li>
+                <li style="margin-right: 100px;"><a style="width: 120px" href=""><span>Contactanos</span></a></li>
+                <li style="width: 180px; margin-right: 0px;"> 
+                    <div class="buscar"> 
+                        <input class="input" style = "width: 80%;" type="search" placeholder="Search" name="Buscar">
+                        <button class = "fa fa-search"></button>
+                    </div>
+                </li>
+
+                <li><a style="width: 150px; padding-right: 0px;padding-top: 4px;" href="{% url 'logout' %}"><span class="font-size: 20px;"> Cerrar Sesión </span></a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+    <!--Container general 1-->
+    <<div class="main col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="row muerto">
+            
+        </div>
+        <!-- fila 1 -->
+        <div class="row">
+
+            <div class="Login col-xs-3 col-sm-3 col-md-3 col-lg-3 "> </div>
+
+                <div style="border-radius: 20px;" class="Login col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                     <h1> Bienvenido edita tu perfil </h1>
+
+                    <form>
+                        <label>Foto:
+                            <img src="{{ user.profile.Photo.ruta }}">
+                        </label>
+                        <label>Nombre:
+                            <input type="text" name="" value="{{ user.first_name }}"> 
+                        </label>
+                        <label>Apellido:
+                            <input type="text" name="" value="{{ user.last_name }}"> 
+                        </label>
+                        <label>Sexo: {{ user.profile.Sexo }}
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> <input type="radio" value="h" name="hm"> Hombre</div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> <input type="radio" value="m" name="hm"> Mujer</div>
+                        </div>
+                        </label>
+                        {% for o in direcciones %}  
+                            <label>Cuidad:
+                                <input type="text" name="" value="{{ o.City }}"> 
+                            </label>
+                            <label>Pais:
+                                <input type="text" name="" value="{{ o.Country }}"> 
+                            </label>
+                        {% endfor  %} 
+                        
+                    </form>
+
+                    <input type="submit" value="Guardar">
+                </div>
+            <div class="Login col-xs-3 col-sm-3 col-md-3 col-lg-3 "> </div>
+
+        </div>
+        
+    </div>
+
+
+    <footer>
+        
+
+
+    </footer>
+
+
+    <!-- Necesario para BootStrap JQUERY -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+    	
+

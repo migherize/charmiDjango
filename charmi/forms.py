@@ -16,3 +16,7 @@ class Login(forms.Form):
 
 class Forget(forms.Form):
     email = forms.CharField(label='Correo', widget=forms.EmailInput(), max_length=100)
+
+class Foto(forms.Form):
+	modelo = Photo
+	fields = ['ruta']
